@@ -155,6 +155,30 @@ function handleSearch() {
 
 //types button event listeners
 
+bugbtn.addEventListener("click", () => typesPokemonFilter(bug))
+dragonbtn.addEventListener("click", () => typesPokemonFilter(dragon))
+electricbtn.addEventListener("click", () => typesPokemonFilter(electric))
+fightbtn.addEventListener("click", () => typesPokemonFilter(fighting))
+firebtn.addEventListener("click", () => typesPokemonFilter(fire))
+flyingbtn.addEventListener("click", () => typesPokemonFilter(flying))
+ghostbtn.addEventListener("click", () => typesPokemonFilter(ghost))
+grassbtn.addEventListener("click", () => typesPokemonFilter(grass))
+groundbtn.addEventListener("click", () => typesPokemonFilter(ground))
+icebtn.addEventListener("click", () => typesPokemonFilter(ice))
+normalbtn.addEventListener("click", () => typesPokemonFilter(normal))
+poisonbtn.addEventListener("click", () => typesPokemonFilter(poison))
+psychicbtn.addEventListener("click", () => typesPokemonFilter(psychic))
+rockbtn.addEventListener("click", () => typesPokemonFilter(rock))
+waterbtn.addEventListener("click", () => typesPokemonFilter(water))
+
+//pokemon types filter
+
+function typesPokemonFilter(types) {
+    const filteredPokemon = pokemons.filter((poke) => {
+        return poke.type.toLowerCase().includes(types)
+    })
+    displayPokemon(filteredPokemon)
+}
 
 
 // let pokemonsArray = []
