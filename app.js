@@ -78,8 +78,8 @@ const displayPokemon = (pokemon) => {
           <img class="card-image" src="${poke.image}"/>
           <h2 class="card-title">${poke.id}. ${poke.name}</h2>
           <p class="card-text">Type: ${poke.type}</p> 
-          <p class="card-text">Height: ${poke.height}</p> 
-          <p class="card-text">Weight: ${poke.weight}</p>
+          <p class="card-text">Height: ${(poke.height)/10}m</p> 
+          <p class="card-text">Weight: ${(poke.weight)/10}kg</p>
           <p class="card-text"> Attack: ${poke.attack}</p>
           <p class="card-text">Defense: ${poke.defense}</p>
       </li>
