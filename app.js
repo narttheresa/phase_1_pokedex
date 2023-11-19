@@ -56,7 +56,7 @@ const fetchPokemon = () => {
   Promise.all(promises).then((results) => {
       pokemons = results.map((result) => ({
           name: result.name,
-          image: result.sprites['front_default'],
+          image: result.sprites.other['dream_world']['front_default'],
           type: result.types.map((type) => type.type.name).join(', '),
           id: result.id,
           height: result.height,
@@ -68,28 +68,103 @@ const fetchPokemon = () => {
   });
 };
 
-//layout for each pokemon displayed-types,height,weight etc
+//layout for each pokemon displayed-the front
 
 const displayPokemon = (pokemon) => {
-  const pokemonHTMLString = pokemon
-      .map(
-          (poke) => `
-      <li class="card">
-          <img class="card-image" src="${poke.image}"/>
-          <h2 class="card-title">${poke.id}. ${poke.name}</h2>
-          <p class="card-text">Type: ${poke.type}</p> 
-          <p class="card-text">Height: ${(poke.height)/10}m</p> 
-          <p class="card-text">Weight: ${(poke.weight)/10}kg</p>
-          <p class="card-text"> Attack: ${poke.attack}</p>
-          <p class="card-text">Defense: ${poke.defense}</p>
-      </li>
-  `
-      )
-      .join('');
-  pokedex.innerHTML = pokemonHTMLString;
+    
+
+    // Remove existing pokemon cards
+    while (pokedex.firstChild) {
+      pokedex.removeChild(pokedex.firstChild)
+    }
+  
+    pokemon.forEach((poke) => {
+      const card = document.createElement('li')
+      card.className = "card"
+      card.addEventListener("click", () => {
+        selectPokemon(poke.id)
+      })
+  
+      const image = document.createElement('img')
+      image.className = "card-image"
+      image.src = poke.image
+  
+      const title = document.createElement('h2')
+      title.className = "card-title"
+      title.textContent = `${poke.id}. ${poke.name}`
+  
+      card.appendChild(image)
+      card.appendChild(title)
+      
+      
+
+     pokedex.appendChild(card) 
+    });
+    
 };
 
+
+const selectPokemon = async (id) => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`
+    const resp = await fetch(url)
+    const poke = await resp.json()
+
+    displayPokemonPopUp(poke)
+}
+
+
+//popup poke details
+
+const displayPokemonPopUp = poke => {
+    console.log(poke)
+    const type = poke.types.map(type => type.type.name).join(", ")
+
+    const popup = document.createElement("div")
+    const closeBtn = document.createElement("button")
+    const card = document.createElement("div")
+    const image = document.createElement("img")
+    const title = document.createElement("h2")
+    const details = document.createElement("p")
+
+    popup.className = "popup"
+    closeBtn.id = "closeBtn"
+    closeBtn.textContent = "close"
+    closeBtn.addEventListener("click", closePopup)
+    card.className = "card"
+    image.className = "card-image"
+    image.src = poke.sprites.other['dream_world']['front_default']
+    title.className = "card-title"
+    title.textContent = poke.name
+    details.innerHTML = `<p>Type: ${type} </p>
+                        <small>| Height: ${(poke.height)/10} m
+                        | Weight: ${(poke.weight)/10}kg
+                        | Attack: ${poke.stats[1].base_stat}
+                        | Defense: ${poke.stats[2].base_stat}</small>`
+
+    
+
+    card.appendChild(image);
+    card.appendChild(title);
+    card.appendChild(details);
+    popup.appendChild(closeBtn);
+    popup.appendChild(card);
+    pokedex.insertBefore(popup, pokedex.firstChild)
+}
+
+const closePopup = () => {
+    const popup = document.querySelector(".popup")
+    popup.parentElement.removeChild(popup)
+}
+
+    
+
+
+
+
+
+
 fetchPokemon();
+
 
 
 //search/filter pokemon 
@@ -179,6 +254,7 @@ function typesPokemonFilter(types) {
     })
     displayPokemon(filteredPokemon)
 }
+
 
 
 // let pokemonsArray = []
