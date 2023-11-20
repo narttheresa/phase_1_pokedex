@@ -103,6 +103,10 @@ const displayPokemon = (pokemon) => {
       const borderColor = colours[firstType];
       card.style.borderColor = borderColor;
 
+      const idTag = document.createElement("p")
+      idTag.className = "id-tag"
+      idTag.textContent = `# ${poke.id}`
+
       const image = document.createElement('img')
       image.className = "card-image"
       image.src = poke.image
@@ -114,8 +118,9 @@ const displayPokemon = (pokemon) => {
   
       const title = document.createElement('h2')
       title.className = "card-title"
-      title.textContent = `${poke.id}. ${poke.name}`
+      title.textContent = `${poke.name}`
   
+      card.appendChild(idTag)
       card.appendChild(image)
       card.appendChild(title)
       
@@ -124,9 +129,6 @@ const displayPokemon = (pokemon) => {
      pokedex.appendChild(card) 
     });
     
-    // const card = document.querySelector('li')
-    // const colour = colours[type][0]
-    // card.style.border = `2px solid ${colour}`
 
 };
 

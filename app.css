@@ -1,6 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:ital,wght@0,500;1,500&family=Cutive+Mono&family=IBM+Plex+Mono:wght@100&family=Rubik+Mono+One&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cutive+Mono&family=IBM+Plex+Mono:wght@100&family=Rubik+Mono+One&display=swap');
 
 
 
@@ -10,7 +10,41 @@ body {
     background-size:  80%;
     background-repeat: repeat space;
     margin: 0 px;
-    font-family: 'Cutive Mono', monospace;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+
+/* logo styling */
+
+.logo {
+    background-image: url(images/pikachu\ bg.png);
+    background-size:  80%;
+    background-repeat: repeat space;
+    font-family: 'Chakra Petch', sans-serif;
+    font-style: italic;
+    text-align: center;
+}
+
+.logo h1 {
+    font-weight: 600;
+    font-size: 60px;
+    text-shadow: 2px 2px lightpink;
+}
+
+.logo h3 {
+    font-weight: 300;
+    text-shadow: 1px 1px lightpink;
+}
+
+/* search/filter styling */
+
+.search-input {
+    border-radius: 5px;
+    font-style: italic;
+}
+
+.types-container img {
+    margin: 2px;
 }
 
 
@@ -28,14 +62,24 @@ body {
 }
 
 
+/* pokemon card styling */
 
 .card {
     list-style: none;
     padding: 50px;
-    background-color: rgb(250, 250, 177);
+    background-color: rgb(255, 255, 255);
     text-align: center;
-    border: 5px solid;
+    border: 5px;
+    border-style: groove;
+    border-radius: 10px;
+}
 
+.id-tag {
+    font-style: italic;
+    font-size:20px;
+    
+    font-family: 'Chakra Petch', sans-serif;
+    text-shadow: 1px 1px lightpink;
 }
 
 .card-title {
@@ -81,16 +125,17 @@ body {
     left: 0%;
     height: 100vh;
     width: 100vw;
-    background:rgb(250, 250, 177);
+    background:rgb(255, 255, 255);
     opacity: 0.9;
     padding-top: 10%;
 }
 
 #closeBtn {
     width: 20%;
-    left: 400px;
+    left: 310px;
     bottom: 200px;
     position: absolute;
+    border-radius: 15px;
     
 }
 
