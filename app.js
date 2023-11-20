@@ -45,6 +45,24 @@ const rock = "rock"
 const waterbtn = document.querySelector("#water")
 const water = "water"
 
+const colours = {
+    fire: 'sandybrown',
+    grass: 'palegreen',
+    electric: 'yellow',
+    water: 'royalblue',
+    ground: 'goldenrod',
+    rock: 'grey',
+    poison: 'purple',
+    bug: 'olive',
+    dragon: 'slateblue',
+    psychic: 'palevioletred',
+    flying: 'mediumturquoise',
+    fighting: 'salmon',
+    normal: 'lightgrey',
+    ice: 'paleturquoise',
+    ghost: 'violet',
+  };
+
 
 //fetching pokemons from the pokeAPI
 const fetchPokemon = () => {
@@ -81,13 +99,18 @@ const displayPokemon = (pokemon) => {
     pokemon.forEach((poke) => {
       const card = document.createElement('li')
       card.className = "card"
-      card.addEventListener("click", () => {
-        selectPokemon(poke.id)
-      })
-  
+      const firstType = poke.type.split(', ')[0];
+      const borderColor = colours[firstType];
+      card.style.borderColor = borderColor;
+
       const image = document.createElement('img')
       image.className = "card-image"
       image.src = poke.image
+
+      image.addEventListener("mouseenter", () => {
+        selectPokemon(poke.id)
+      })
+  
   
       const title = document.createElement('h2')
       title.className = "card-title"
@@ -96,11 +119,15 @@ const displayPokemon = (pokemon) => {
       card.appendChild(image)
       card.appendChild(title)
       
-      
+   
 
      pokedex.appendChild(card) 
     });
     
+    // const card = document.querySelector('li')
+    // const colour = colours[type][0]
+    // card.style.border = `2px solid ${colour}`
+
 };
 
 
@@ -256,109 +283,3 @@ function typesPokemonFilter(types) {
 }
 
 
-
-// let pokemonsArray = []
-
-// fetch(`https://pokeapi.co/api/v2/pokemon?limit=${pokemonNumber}`)
-//     .then(resp => resp.json())
-//     .then(data => {
-//         pokemonsArray = data.results 
-//         showPokemons(pokemonsArray)
-//     })
-
-
-    // async function fetchPokemonBefore(id) {
-    //     try {
-    //         const [pokemon, pokemonType] = await Promise.all([fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-    //         .then(resp => resp.json()),
-    //         fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
-    //         .then(resp => resp.json()),
-    //     ])
-    //     return true
-    //     } 
-    //     catch (err) {
-    //         console.error("Failed to fetch Pokemon data")
-    //     }
-    // }
-
-
-    // function showPokemons(pokemon) {
-    //     pokeList.innerHTML = ""
-
-        
-    //         pokemon.forEach((pokemon) => {
-    //             const pokeID = pokemon.url.split("/")[6];
-    //             const li_item = document.createElement("div");
-    //             li_item.className = "list-item";
-            
-    //             const numberWrap = document.createElement("div");
-    //             const numberCaption = document.createTextNode(`#${pokeID}`);
-    //             numberWrap.className = "number-wrap";
-    //             numberWrap.appendChild(numberCaption);
-    //             li_item.appendChild(numberWrap);
-            
-    //             const imgWrap = document.createElement("div");
-    //             const img = document.createElement("img");
-    //             img.src = `https://raw.githubusercontent.com/pokeapi/sprites/master/sprites/pokemon/other/dream-world/${pokeID}.svg`;
-    //             img.alt = pokemon.name;
-    //             imgWrap.className = "img-wrap";
-    //             imgWrap.appendChild(img);
-    //             li_item.appendChild(imgWrap);
-            
-    //             const nameWrap = document.createElement("div");
-    //             const nameCaption = document.createTextNode(`${pokemon.name}`);
-    //             nameWrap.className = "name-wrap";
-    //             nameWrap.appendChild(nameCaption);
-    //             li_item.appendChild(nameWrap);
-            
-    //             pokeList.appendChild(li_item);
-
-
-              
-                
-    //     })
-    // }
-
-
-
-    
-    // searchInput.addEventListener("keyup", handleSearch);
-
-    // function handleSearch() {
-    //   const searchKey = searchInput.value.toLowerCase();
-    //   let filteredPoke;
-    
-    //   if (numberFilter.checked) {
-    //     filteredPoke = pokemonsArray.filter((pokemon) => {
-    //       const pokeID = pokemon.url.split("/")[6];
-    //       return pokeID.startsWith(searchKey);
-    //     });
-    //   } else if (nameFilter.checked) {
-    //     filteredPoke = pokemonsArray.filter((pokemon) => {
-    //       return pokemon.name.toLowerCase().startsWith(searchKey);
-    //     });
-    //   } else {
-    //     filteredPoke = pokemonsArray;
-    //   }
-    
-    //   showPokemons(filteredPoke);
-    
-    //   if (filteredPoke.length === 0) {
-    //     errorMsg.style.display = "block";
-    //   } else {
-    //     errorMsg.style.display = "none";
-    //   }
-
-    //   const searchButton = document.querySelector(".search-icon")
-    //   searchButton.addEventListener("click", handleSearch)
-    // }
-
-
-    // const closeButton = document.querySelector(".search-close-icon")
-    // closeButton.addEventListener("click", clearSearch)
-
-    // function clearSearch() {
-    //     searchInput.value =""
-    //     showPokemons(pokemonsArray)
-    //     errorMsg.style.display = "none"
-    // }
