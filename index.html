@@ -24,11 +24,18 @@
                 <input type="text" class="search-input" placeholder="search pokemon" id="search-input">
                 <img src="images/close-circle icon.svg" alt="cross" class="search-close-icon" id="search-close-icon"/>
             </div>
+            <div class="sort-container">
+                <div class="sort-div">
+                    <img src="images/sort-icon.svg" sort="sort" class="sort-icon" id="sort-icon"/>
+                </div>
+            </div>
             <div class="filter-container">
                 <p class="filtering">Sort by:</p>
                 <div class="filter-bar" >
-                    <input type="radio" id="number" name="filters" value="number" checked />
-                    <label for="number" class="label-number">Number</label>  
+                    <div>
+                        <input type="radio" id="number" name="filters" value="number" checked />
+                        <label for="number" class="label-number">Number</label>  
+                    </div>
                 </div>
                 <div>
                     <input type="radio" id="name" name="filters" value="name"/>
@@ -36,7 +43,8 @@
                 </div>
 
             </div>
-            <div class="types-container">
+        </div>
+        <div class="types-container">
             <p class="types-text">Pick a type: </p>
                 <img src="images/bug icon.png" id="bug" alt="bug-icon"/>
                 <img src="images/dragon icon.png" id="dragon" alt="dragon-icon"/>
@@ -54,7 +62,6 @@
                 <img src="images/rock icon.png" id="rock" alt="rock-icon"/>
                 <img src="images/water icon.png" id="water" alt="water-icon"/>
             </div>
-        </div>
     </div>
         </header>
         <section class="pokemon-list">

@@ -298,3 +298,46 @@ function typesPokemonFilter(types) {
 }
 
 
+const inputEl = document.querySelector("#search-input")
+const searchIcon = document.querySelector("#search-close-icon")
+const sortContainer = document.querySelector(".sort-container")
+
+
+inputEl.addEventListener("input", () => {
+    handleInput(inputEl)
+})
+
+searchIcon.addEventListener("click", handleSearchClose)
+
+sortContainer.addEventListener("click", handleSortIcon)
+
+
+function handleInput(inputEl) {
+    const inputValue = inputEl.value
+
+    if(inputValue !== '') {
+        document
+        .querySelector("search-close-icon")
+        .classList.add("search-close-icon-visible")
+    } else {
+        document
+        .querySelector("search-close-icon")
+        .classList.remove("search-close-icon-visible")
+    }
+}
+
+function handleSearchClose() {
+    document.querySelector("#search-input").value = ""
+    document
+    .querySelector("#search-close-icon")
+    .classList.remove("search-close-icon-visible")
+}
+
+
+function handleSortIcon() {
+    const filterContainer = document.querySelector(".filter-container");
+    if (filterContainer) {
+        filterContainer.classList.toggle("filter-container-open");
+    }
+    document.querySelector("body").classList.toggle("filter-wrapper-overlay");
+}
