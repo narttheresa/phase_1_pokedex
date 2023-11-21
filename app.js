@@ -156,27 +156,40 @@ const displayPokemonPopUp = poke => {
     const details = document.createElement("p")
 
     popup.className = "popup"
-    closeBtn.id = "closeBtn"
-    closeBtn.textContent = "close"
-    closeBtn.addEventListener("click", closePopup)
     card.className = "card"
     image.className = "card-image"
     image.src = poke.sprites.other['dream_world']['front_default']
     title.className = "card-title"
     title.textContent = poke.name
     details.innerHTML = `<p>Type: ${type} </p>
-                        <small>| Height: ${(poke.height)/10} m
+                        <small> Height: ${(poke.height)/10} m
                         | Weight: ${(poke.weight)/10}kg
                         | Attack: ${poke.stats[1].base_stat}
                         | Defense: ${poke.stats[2].base_stat}</small>`
+
+    fetch(`https://pokeapi.co/api/v2/pokemon-species/${poke.id}`)
+        .then(resp => resp.json())
+        .then(data => {
+            const description = data.flavor_text_entries[10].flavor_text
+            const flavorTextEl = document.createElement("p")
+            flavorTextEl.className = "pokemon-description"
+            flavorTextEl.textContent = `" ${description} "`
+
+            details.appendChild(flavorTextEl)
+        })
+    
+                        
+    closeBtn.id = "closeBtn"
+    closeBtn.textContent = "close"
+    closeBtn.addEventListener("click", closePopup)
 
     
 
     card.appendChild(image);
     card.appendChild(title);
     card.appendChild(details);
-    popup.appendChild(closeBtn);
     popup.appendChild(card);
+    popup.appendChild(closeBtn);
     pokedex.insertBefore(popup, pokedex.firstChild)
 }
 
