@@ -298,6 +298,8 @@ function typesPokemonFilter(types) {
 }
 
 
+// toggling filter/sort icons
+
 const inputEl = document.querySelector("#search-input")
 const searchIcon = document.querySelector("#search-close-icon")
 const sortContainer = document.querySelector(".sort-container")
