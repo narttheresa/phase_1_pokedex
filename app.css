@@ -38,8 +38,6 @@ body {
 
 /* search/filter styling */
 
-
-
 .search-container, 
 .search-bar {
     display: flex;
@@ -73,22 +71,21 @@ body {
     opacity: 0.5;
 }
 
-
-
 .search-bar > input {
     width: 70%;
     border: none;
 }
 
 .search-close-icon {
-    margin-left: 170px;
+    margin-left: 120px;
     opacity: 0.4;
 }
+
+
 
 .sort-container {
     position: relative;
 }
-
 
 .sort-div {
     background-color: var(--grayscale-white);
@@ -107,9 +104,9 @@ body {
 }
 
 
+
 .filter-container {
     position: relative;
-    border: 4px solid var(--identity-primary);
     border-top: 0;
     padding: 8px 8px 8px 8px;
     right: 0px;
@@ -134,8 +131,6 @@ body {
     bottom: 0;
     z-index: 2;
 }
-
-
 
 
 .filter-container div {
@@ -176,14 +171,6 @@ body {
     margin-bottom: 16px;
 }
 
-
-.filter-bar > div:last-child {
-    margin-bottom: 0px;
-  }
-  
-  .filter-bar input {
-    accent-color: var(--identity-primary);
-  }
   
 /* main layout */
 
@@ -278,6 +265,11 @@ body {
     position: relative;
     border-radius: 0.75rem;
     margin: 0 auto;
+    border-color: beige;
+}
+
+#closeBtn:hover {
+    background-color: rgb(242, 181, 181);
 }
 
 .popup .card {
@@ -295,3 +287,48 @@ body {
     font-style: italic;
     padding-top: 20px;
 }
+
+/* error msg */
+
+#error-message {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: larger;
+    padding-top: 20px;
+    background-image: url(images/pikachu\ bg.png);
+    background-size:  80%;
+    background-repeat: repeat space;
+}
+
+#error-message img {
+    height: 20%;
+    width: 20%;
+}
+
+/* footer */
+
+.footer div {
+    display: inline-block;
+    font-weight: 600;
+    font-style: italic;
+    color: black;
+    text-shadow: 1px 1px lightpink;
+}
+
+.footer-name span {
+    padding-bottom: 20px;
+}
+.text {
+    margin-right: 20px;
+    float: right;
+    margin-left: 100px;
+    
+    font-style: italic;
+    font-weight: 600;
+    text-decoration: none;
+    font-style: italic;
+    color: black;
+    text-shadow: 1px 1px lightpink;
+}
+
