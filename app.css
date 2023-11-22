@@ -82,7 +82,7 @@ body {
 }
 
 .search-close-icon {
-    margin-left: 140px;
+    margin-left: 150px;
     opacity: 0.4;
 }
 
@@ -190,6 +190,9 @@ body {
 .pokemon-container {
     padding: 40px;
     margin: 0 auto;
+    background-image: url(images/pikachu\ bg.png);
+    background-size:  80%;
+    background-repeat: repeat space;
 }
 
 
@@ -270,7 +273,9 @@ body {
     position: relative;
     border-radius: 0.75rem;
     margin: 0 auto;
+    margin-bottom: 100px;
     border-color: beige;
+
 }
 
 #closeBtn:hover {
@@ -313,27 +318,38 @@ body {
 
 /* footer */
 
-.footer div {
-    display: inline-block;
-    font-weight: 600;
-    font-style: italic;
-    color: black;
-    text-shadow: 1px 1px lightpink;
+.footer {
+    display: block;
+    text-align: center;
+    background-image: url(images/pikachu\ bg.png);
+    background-size:  80%;
+    background-repeat: repeat space;
 }
 
-.footer-name span {
-    padding-bottom: 20px;
+.footer-name {
+    font-size: larger;
+    font-style: italic;
+    font-weight: 700;
+    text-shadow: 1px 1px salmon;
 }
-.text {
-    margin-right: 20px;
-    float: right;
-    margin-left: 100px;
+
+.footer a:not(.pokeApi)  {
+    color: black;
+    font-size: smaller;
+    word-spacing: 30px;
     
-    font-style: italic;
-    font-weight: 600;
+}
+footer a:link {
     text-decoration: none;
-    font-style: italic;
-    color: black;
-    text-shadow: 1px 1px lightpink;
 }
 
+.pokeApi {
+    font-weight: bolder;
+    text-decoration: none;
+    text-shadow: 2px 2px salmon;
+    color: black;
+}
+
+.pokeApi:link {
+    text-decoration: none;
+}
