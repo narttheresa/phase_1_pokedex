@@ -1,8 +1,7 @@
 
-
+// creating global scopes
 const pokemonNumber = 151;
 const pokeList = document.querySelector(".list")
-const modalContainer = document.querySelector(".modal-container")
 
 const searchInput = document.querySelector("#search-input")
 const numberFilter = document.querySelector("#number")
@@ -45,6 +44,7 @@ const rock = "rock"
 const waterbtn = document.querySelector("#water")
 const water = "water"
 
+// pokemon type matches with the colours
 const colours = {
     fire: 'sandybrown',
     grass: 'palegreen',
