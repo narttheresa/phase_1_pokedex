@@ -145,7 +145,7 @@ const selectPokemon = async (id) => {
 //popup poke details
 
 const displayPokemonPopUp = poke => {
-    console.log(poke)
+    // console.log(poke)
     const type = poke.types.map(type => type.type.name).join(", ")
 
     const popup = document.createElement("div")
