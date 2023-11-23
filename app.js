@@ -128,8 +128,6 @@ const displayPokemon = (pokemon) => {
 
      pokedex.appendChild(card) 
     });
-    
-
 };
 
 
@@ -140,7 +138,6 @@ const selectPokemon = async (id) => {
 
     displayPokemonPopUp(poke)
 }
-
 
 //popup poke details
 
@@ -183,7 +180,6 @@ const displayPokemonPopUp = poke => {
     closeBtn.textContent = "close"
     closeBtn.addEventListener("click", closePopup)
 
-    
 
     card.appendChild(image);
     card.appendChild(title);
@@ -198,20 +194,10 @@ const closePopup = () => {
     popup.parentElement.removeChild(popup)
 }
 
-    
-
-
-
-
-
 
 fetchPokemon();
 
-
-
 //search/filter pokemon 
-
-
 
 function handleSearch() {
     const searchKey = searchInput.value.toLowerCase()
@@ -267,8 +253,6 @@ function handleSearch() {
         displayPokemon(pokemons)
         errorMsg.style.display = "none"
     }
-
-
 
 //types button event listeners
 
