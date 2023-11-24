@@ -86,18 +86,16 @@ body {
     opacity: 0.4;
 }
 
-
+/* sort icon- filter name/number styling */
 
 .sort-container {
     position: relative;
 }
 
 .sort-div {
-    background-color: var(--grayscale-white);
-    border-radius: 100%;
+   
     min-width: 2rem;
     min-height: 2rem;
-    box-shadow: var(--drop-shadow-inner);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,7 +105,6 @@ body {
 .search-close-icon-visible {
     display: block;
 }
-
 
 
 .filter-container {
@@ -137,10 +134,12 @@ body {
     z-index: 2;
 }
 
-
 .filter-container div {
     padding: 0;
 }
+/* filter poke types styling */
+
+
 
 .types-container img {
     margin: 2px;
@@ -162,19 +161,6 @@ body {
     font-weight: bolder;
 }
 
-.filter-bar {
-    background-color: var(--grayscale-white);
-    box-shadow: var(--drop-shadow-inner);
-    padding: 16px 20px;
-    border-radius: 8px;
-}
-
-.filter-bar > div {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 16px;
-}
 
   
 /* main layout */

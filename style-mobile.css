@@ -1,7 +1,137 @@
 @media only screen and (max-width: 440px) {
     .logo h1 {
-        
-        font-size: 40px;
+        font-size: 40px;   
+    }
+
+    .logo h3 {
+        font-size: 15px;
         
     }
+
+    .search-container, 
+    .search-bar {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    gap: 4px;
+    margin: 10px 15px;
+    }
+
+    .search-bar,
+    .search-input {
+    
+    height: 25px;
+    gap: 5px;
+    font-style: italic;
+    font-size: small;
+    font-weight: 700;
+    }
+
+   
+    .search-icon {
+    margin-left: 10px;
+    opacity: 0.5;
+    }
+
+    .search-close-icon {
+    margin-left: 3px;
+    opacity: 0.4;
+    }
+
+
+    .sort-div {
+        left: 35px;
+        display: flex;
+        position: relative;
+    }
+
+    .filter-container {
+    position: relative;
+    border-top: 0;
+    left: 60px;
+    min-width: 80px;
+    top:8px;
+    display: none;
+    font-weight: 500;
+    font-size: small;
+    }
+
+    .filter-container-open {
+    display: block;
+    }
+
+    .filter-wrapper-overlay .main::before {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    }
+
+    .filter-container div {
+    padding: 0;
+    }
+
+    .types-container img {
+        margin: 2px;
+        width: 40px;
+        height: 20px;
+        position: relative;
+        display: inline-block;
+        transition: all 0.5s ease;
+    }
+    
+    .types-container img:hover {
+        transform: scale(1.1);
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+
+    #closeBtn {
+        width: 20%;
+        position: relative;
+        border-radius: 0.75rem;
+        margin: 0 auto;
+        margin-bottom: 200px;
+        border-color: beige;
+    
+    }
+ 
+    #error-message {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: small;
+        padding-top: 20px;
+        background-image: url(images/pikachu\ bg.png);
+        background-size:  80%;
+        background-repeat: repeat space;
+    }
+
+
+    
+    .footer-name {
+        font-size: small;
+        font-style: italic;
+        font-weight: 700;
+        text-shadow: 1px 1px salmon;
+    }
+    
+    .footer a:not(.pokeApi)  {
+        color: black;
+        font-size: smaller;
+        word-spacing: 40px;
+        
+    }
+    
+    
+    .pokeApi {
+        font-size: small;
+    }
+    
+   
 }
