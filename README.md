@@ -3,7 +3,6 @@
 *Accessing the web page here:* [The Pokedex](https://narttheresa.github.io/phase_1_pokedex/)
 
 
-![Uploading Untitled video - Made with Clipchamp.gif…]()
 
 Welcome fellow Pokemon trainer! Your first adventure awaits for you in the Kanto region of the Pokemon Realm. Get your hands on the Pokedex to get yourselves familar with the 151 Pokemon species wthin the region.
 
