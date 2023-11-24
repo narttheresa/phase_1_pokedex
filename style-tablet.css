@@ -1,17 +1,7 @@
 
-/* for mobile devices */
+/* for tablet devices */
 
-
-@media only screen and (max-width: 440px) {
-    .logo h1 {
-        font-size: 40px;   
-    }
-
-    .logo h3 {
-        font-size: 15px;
-        
-    }
-
+@media only screen and (min-width: 440px) and (max-width: 620px) {
     .search-container, 
     .search-bar {
     display: flex;
@@ -136,6 +126,4 @@
     .pokeApi {
         font-size: small;
     }
-    
-   
 }
