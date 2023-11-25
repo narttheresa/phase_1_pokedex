@@ -1,7 +1,6 @@
 
 // creating global scopes
 const pokemonNumber = 151;
-const pokeList = document.querySelector(".list")
 
 const searchInput = document.querySelector("#search-input")
 const numberFilter = document.querySelector("#number")
@@ -236,10 +235,13 @@ function handleSearch() {
         }
     }
 
-    const searchButton = document.querySelector(".search-icon")
-    searchButton.addEventListener("click", handleSearch)
-}
     
+}
+  
+    // const searchButton = document.querySelector(".search-icon")
+    // searchButton.addEventListener("click", handleSearch)
+
+
 //event listener for search input
     searchInput.addEventListener("keyup", handleSearch)
 
@@ -284,40 +286,9 @@ function typesPokemonFilter(types) {
 
 // toggling filter/sort icons
 
-const inputEl = document.querySelector("#search-input")
-const searchIcon = document.querySelector("#search-close-icon")
 const sortContainer = document.querySelector(".sort-container")
 
-
-inputEl.addEventListener("input", () => {
-    handleInput(inputEl)
-})
-
-searchIcon.addEventListener("click", handleSearchClose)
-
 sortContainer.addEventListener("click", handleSortIcon)
-
-
-function handleInput(inputEl) {
-    const inputValue = inputEl.value
-
-    if(inputValue !== '') {
-        document
-        .querySelector("search-close-icon")
-        .classList.add("search-close-icon-visible")
-    } else {
-        document
-        .querySelector("search-close-icon")
-        .classList.remove("search-close-icon-visible")
-    }
-}
-
-function handleSearchClose() {
-    document.querySelector("#search-input").value = ""
-    document
-    .querySelector("#search-close-icon")
-    .classList.remove("search-close-icon-visible")
-}
 
 
 function handleSortIcon() {
