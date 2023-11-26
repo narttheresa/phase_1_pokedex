@@ -238,9 +238,6 @@ function handleSearch() {
     
 }
   
-    // const searchButton = document.querySelector(".search-icon")
-    // searchButton.addEventListener("click", handleSearch)
-
 
 //event listener for search input
     searchInput.addEventListener("keyup", handleSearch)
