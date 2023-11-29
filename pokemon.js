@@ -172,7 +172,7 @@ const displayPokemon = (pokemon) => {
                 likeButton.textContent = `${poke.name} has been liked ${likeCount} times`
             } else {
                 pokemonLikes.push({ id: poke.id, likes: 1 })
-                likeButton.textContent = `${poke.name} has been liked (1) times`
+                likeButton.textContent = `${poke.name} has been liked 1 times`
             }
 
         })
