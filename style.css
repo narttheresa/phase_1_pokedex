@@ -225,9 +225,9 @@ body {
 
 
 .likeButton{
-    font-size: medium;
+    font-size: small;
     height: 50px;
-    width: 80px;
+    width: 150px;
     border-radius: 20px;
     border-color: darkgray;
     text-transform: uppercase;
@@ -236,6 +236,10 @@ body {
 .likeButton:hover {
     background-color: lightsalmon;
     font-weight: 700;
+    height: 50px;
+    width: 180px;
+    font-size: small;
+    word-spacing: 1px;
 }
 
 

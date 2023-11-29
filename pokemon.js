@@ -160,6 +160,7 @@ const displayPokemon = (pokemon) => {
         title.className = "card-title"
         title.textContent = `${poke.name}`
 
+        //adding like button to the pokemon card
         const likeButton = document.createElement('button')
         likeButton.className = "likeButton"
         likeButton.textContent = "like"
@@ -168,10 +169,10 @@ const displayPokemon = (pokemon) => {
             const pokemonLike = pokemonLikes.find(like => like.id === poke.id)
             if (pokemonLike) {
                 let likeCount = pokemonLike.likes += 1
-                likeButton.textContent = `Like (${likeCount})`
+                likeButton.textContent = `${poke.name} has been liked ${likeCount} times`
             } else {
                 pokemonLikes.push({ id: poke.id, likes: 1 })
-                likeButton.textContent = "like (1)"
+                likeButton.textContent = `${poke.name} has been liked (1) times`
             }
 
 
