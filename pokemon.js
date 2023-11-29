@@ -175,9 +175,7 @@ const displayPokemon = (pokemon) => {
                 likeButton.textContent = `${poke.name} has been liked (1) times`
             }
 
-
         })
-
 
         card.appendChild(idTag)
         card.appendChild(image)
