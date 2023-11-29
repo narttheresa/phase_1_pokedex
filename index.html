@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,83 +8,84 @@
     <link rel="stylesheet" href="style-mobile.css">
     <link rel="stylesheet" href="style-tablet.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-     
-    
+
+
     <title>The Pokedex</title>
 </head>
+
 <body>
     <main>
         <header>
-    <div class="container">
-        <div class="logo">
-            <img>
-                <h1>The Pokedex</h1>
-                <h3>The Pokedex for first generation of Pokemons in Kanto region</h3>
-        </div>
-        <div class="search-container">
-            <div class="search-bar">
-                <img src="images/search icon.svg" alt="search-icon" class="search-icon"/>
-                <input type="text" class="search-input" placeholder="search pokemon" id="search-input">
-                <img src="images/close-circle icon.svg" alt="cross" class="search-close-icon" id="search-close-icon"/>
-            </div>
-            <div class="sort-container">
-                <div class="sort-div">
-                    <img src="images/sort-icon.svg" sort="sort" class="sort-icon" id="sort-icon"/>
+            <div class="container">
+                <div class="logo">
+                    <img>
+                    <h1>The Pokedex</h1>
+                    <h3>The Pokedex for first generation of Pokemons in Kanto region</h3>
                 </div>
-            </div>
-            <div class="filter-container">
-                <p class="filtering">Filter by:</p>
-                <div class="filter-bar" >
-                    <div>
-                        <input type="radio" id="name" name="filters" value="name" checked />
-                        <label for="name" class="label-name">Name</label>  
+                <div class="search-container">
+                    <div class="search-bar">
+                        <img src="images/search icon.svg" alt="search-icon" class="search-icon" />
+                        <input type="text" class="search-input" placeholder="search pokemon" id="search-input">
+                        <img src="images/close-circle icon.svg" alt="cross" class="search-close-icon"
+                            id="search-close-icon" />
+                    </div>
+                    <div class="sort-container">
+                        <div class="sort-div">
+                            <img src="images/sort-icon.svg" sort="sort" class="sort-icon" id="sort-icon" />
+                        </div>
+                    </div>
+                    <div class="filter-container">
+                        <p class="filtering">Filter by:</p>
+                        <div class="filter-bar">
+                            <div>
+                                <input type="radio" id="name" name="filters" value="name" checked />
+                                <label for="name" class="label-name">Name</label>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="radio" id="number" name="filters" value="number" />
+                            <label for="number" class="label-number">Number</label>
+                        </div>
+
                     </div>
                 </div>
-                <div>
-                    <input type="radio" id="number" name="filters" value="number"/>
-                    <label for="number" class="label-number">Number</label>
+                <div class="types-container">
+                    <p class="types-text">Pick a type: </p>
+                    <img src="images/bug icon.png" id="bug" alt="bug-icon" />
+                    <img src="images/dragon icon.png" id="dragon" alt="dragon-icon" />
+                    <img src="images/electric icon.png" id="electric" alt="electric-icon" />
+                    <img src="images/fighting icon.png" id="fighting" alt="fighting-icon" />
+                    <img src="images/fire icon.png" id="fire" alt="fire-icon" />
+                    <img src="images/flying icon.png" id="flying" alt="flying-icon" />
+                    <img src="images/ghost icon.png" id="ghost" alt="ghost-icon" />
+                    <img src="images/grass icon.png" id="grass" alt="grass-icon" />
+                    <img src="images/ground icon.png" id="ground" alt="ground-icon" />
+                    <img src="images/ice icon.png" id="ice" alt="ice-icon" />
+                    <img src="images/normal icon.png" id="normal" alt="normal-icon" />
+                    <img src="images/poison icon.png" id="poison" alt="poison-icon" />
+                    <img src="images/psychic icon.png" id="psychic" alt="psychic-icon" />
+                    <img src="images/rock icon.png" id="rock" alt="rock-icon" />
+                    <img src="images/water icon.png" id="water" alt="water-icon" />
                 </div>
-
             </div>
-        </div>
-        <div class="types-container">
-            <p class="types-text">Pick a type: </p>
-                <img src="images/bug icon.png" id="bug" alt="bug-icon"/>
-                <img src="images/dragon icon.png" id="dragon" alt="dragon-icon"/>
-                <img src="images/electric icon.png" id="electric" alt="electric-icon"/>
-                <img src="images/fighting icon.png" id="fighting" alt="fighting-icon"/>
-                <img src="images/fire icon.png" id="fire" alt="fire-icon"/>
-                <img src="images/flying icon.png" id="flying" alt="flying-icon"/>
-                <img src="images/ghost icon.png" id="ghost" alt="ghost-icon"/>
-                <img src="images/grass icon.png" id="grass" alt="grass-icon"/>
-                <img src="images/ground icon.png" id="ground" alt="ground-icon"/>
-                <img src="images/ice icon.png" id="ice" alt="ice-icon"/>
-                <img src="images/normal icon.png" id="normal" alt="normal-icon"/>
-                <img src="images/poison icon.png" id="poison" alt="poison-icon"/>
-                <img src="images/psychic icon.png" id="psychic" alt="psychic-icon"/>
-                <img src="images/rock icon.png" id="rock" alt="rock-icon"/>
-                <img src="images/water icon.png" id="water" alt="water-icon"/>
-            </div>
-    </div>
         </header>
         <section class="pokemon-list">
             <div class="pokemon-container">
-                <ol id="pokedex">  
+                <ol id="pokedex">
                 </ol>
             </div>
             <div id="error-message" hidden>Sorry trainer...Pokemon not found
-                <div><img src="images/sad pikachu.png" alt="sad-pikachu"/>
+                <div><img src="images/sad pikachu.png" alt="sad-pikachu" />
                 </div>
             </div>
-        </section> 
-    </main>  
+        </section>
+    </main>
     <footer class="footer">
         <div class="footer-name">
-            <span>Developed by:   <em>THERESA TRAN</em></span>
+            <span>Developed by: <em>THERESA TRAN</em></span>
         </div>
         <div>
-            <a href="https://github.com/narttheresa" target="_blank" title="github"><span
-                    class="text">github</span></a>
+            <a href="https://github.com/narttheresa" target="_blank" title="github"><span class="text">github</span></a>
             <a href="https://www.linkedin.com/in/theresa-tran-832a96157/" target="_blank" title="linkedin"><span
                     class="text">linkedin</span></a>
             <a href="https://medium.com/@theresa1194" target="_blank" title="medium"><span
@@ -95,5 +97,6 @@
         </div>
     </footer>
 </body>
-    <script src="pokemon.js"></script>
+<script src="pokemon.js"></script>
+
 </html>

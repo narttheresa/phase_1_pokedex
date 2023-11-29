@@ -223,6 +223,15 @@ body {
     
 }
 
+
+.likeButton{
+    font-size: larger;
+    height: 50px;
+    width: 80px;
+}
+
+
+
 @keyframes bounce {
     20% {
         transform: translateY(-15px);
