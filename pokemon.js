@@ -125,7 +125,7 @@ const fetchPokemon = () => {
 };
 
 
-pokemonLiked = []
+pokemonLikes = []
 //layout for each pokemon displayed-the front
 
 const displayPokemon = (pokemon) => {
@@ -165,12 +165,12 @@ const displayPokemon = (pokemon) => {
         likeButton.textContent = "like"
 
         likeButton.addEventListener("click", () => {
-            const pokemonLike = pokemonLiked.find(pl => pl.id === poke.id)
+            const pokemonLike = pokemonLikes.find(like => like.id === poke.id)
             if (pokemonLike) {
-                pokemonLike.likes += 1
-                likeButton.textContent = `Like (${pokemonLike.likes})`
+                let likeCount = pokemonLike.likes += 1
+                likeButton.textContent = `Like (${likeCount})`
             } else {
-                pokemonLiked.push({ id: poke.id, likes: 1 })
+                pokemonLikes.push({ id: poke.id, likes: 1 })
                 likeButton.textContent = "like (1)"
             }
 
