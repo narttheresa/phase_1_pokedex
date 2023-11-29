@@ -83,7 +83,7 @@ body {
 
 .search-close-icon {
     margin-left: 150px;
-    opacity: 0.4;
+    opacity: 0.85;
 }
 
 /* sort icon- filter name/number styling */
@@ -225,9 +225,17 @@ body {
 
 
 .likeButton{
-    font-size: larger;
+    font-size: medium;
     height: 50px;
     width: 80px;
+    border-radius: 20px;
+    border-color: darkgray;
+    text-transform: uppercase;
+}
+
+.likeButton:hover {
+    background-color: lightsalmon;
+    font-weight: 700;
 }
 
 
